@@ -6,7 +6,7 @@
     <div v-for="(el, idx) in products" :key="idx">
       <h4 :style="스타일">{{ el }}</h4>
       <p>{{ price[idx] }}만원</p>
-      <button @click="신고수[idx]++">허위매물신고</button>
+      <button @click="increase(idx)">허위매물신고</button>
       <span>신고수 : {{ 신고수[idx] }}</span>
     </div>
     <!-- <div>
@@ -36,6 +36,11 @@ export default {
       메뉴들: ["Home", "Shop", "About"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
+  },
+  methods: {
+    increase(idx) {
+      this.신고수[idx]++;
+    },
   },
   components: {},
 };
